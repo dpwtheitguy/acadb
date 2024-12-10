@@ -3,6 +3,7 @@
 # See: https://pwnedlabs.io/labs/breach-in-the-cloud
 # Script to format all JSON files in the current directory using jq
 # It overwrites the original files with the formatted version.
+# Common use case it to clean up CloudTrail Logs
 
 # Ensure jq is installed
 if ! command -v jq &> /dev/null; then
