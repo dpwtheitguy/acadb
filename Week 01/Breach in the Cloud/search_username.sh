@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-# Description: This script searches for userName in files within the specified directory, 
-# sorts the results, and logs the output in a secure and organized manner.
-
-# Security: Exit on errors, unset variables, and disallow globbing.
-set -euf -o pipefail
-set -r
-
 # Default directory to search (current directory if not provided)
 declare search_directory="${1:-.}"  # Use the first argument or default to current directory
 declare search_term="userName"
