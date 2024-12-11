@@ -11,7 +11,7 @@ readonly SCRIPT_NAME="$(basename "$0")"
 log() {
   local severity="$1"
   local message="$2"
-  echo "time=$(date --iso-8601=seconds) script=${SCRIPT_NAME} severity=${severity} message=\"${message}\"" app=\"${app}\"" pwd=\"${pwd}\""
+  echo "time=$(date --iso-8601=seconds) script=${SCRIPT_NAME} severity=${severity} message=\"${message}\" " 
 }
 
 format_json_files() {
