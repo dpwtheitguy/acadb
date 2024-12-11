@@ -2,8 +2,17 @@
 
 # Description: Script is useful for cleaning up Cloudtrail logs for investigations
 # SPDX-License-Identifier: MIT
-# ver 6.9.2020.1 / Shellcheck+Bashlint Pass Date
+# ver 12.10.2024.1
 # Style guide: https://google.github.io/styleguide/shellguide.html
+
+
+### TODO/Bugs/Change
+# TODO(me): Bad Convention, rename the log function to match verb-noun write-log
+# TODO(me): Splunk CIM issue, log function needs to place app, pwd, status in their own blocks for schema
+# TODO(me): Splunk CIM issue, message logs need to be sourcetype consistent/have consistent taxonomy 
+# TODO(me): Look for the old SH script for better logging design the chatGPT one is a bit off
+# TODO(me): Feature, add how long the script run 
+# TODO(me): move jq and files exist into a preflightcheck block
 
 set -o errexit
 set -o nounset
