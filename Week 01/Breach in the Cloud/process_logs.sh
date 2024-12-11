@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Script to format all JSON files in the current directory using jq.
-# Adheres to Google's Shell Style Guide and CIM-compatible logging.
+# Script is useful for cleaning up Cloudtrail logs for investigations
 
 set -o errexit
 set -o nounset
