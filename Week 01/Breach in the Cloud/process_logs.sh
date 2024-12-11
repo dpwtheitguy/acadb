@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-# Script is useful for cleaning up Cloudtrail logs for investigations
+# Description: Script is useful for cleaning up Cloudtrail logs for investigations
+# SPDX-License-Identifier: MIT
+# ver 6.9.2020.1 / Shellcheck+Bashlint Pass Date
+# Style guide: https://google.github.io/styleguide/shellguide.html
+
+
 
 set -o errexit
 set -o nounset
