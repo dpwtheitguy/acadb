@@ -6,6 +6,9 @@
 # ver 12.10.2024.1
 # Style guide: https://google.github.io/styleguide/shellguide.html
 
+# Or just do this: 
+# for file in *.json; do jq . "$file" > "$file.tmp" && mv "$file.tmp" "$file"; done
+
 
 ### TODO/Bugs/Change
 # TODO(me): Bad Convention, rename the log function to match verb-noun write-log
