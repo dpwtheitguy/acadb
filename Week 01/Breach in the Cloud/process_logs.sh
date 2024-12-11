@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Description: Script is useful for cleaning up Cloudtrail logs for investigations
+# Description: Script is useful for cleaning up Cloudtrail logs for investigations from pwnedlabs
+# Site: https://pwnedlabs.io/labs/breach-in-the-cloud
 # SPDX-License-Identifier: MIT
 # ver 12.10.2024.1
 # Style guide: https://google.github.io/styleguide/shellguide.html
