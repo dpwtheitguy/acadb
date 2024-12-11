@@ -11,15 +11,13 @@ readonly SCRIPT_NAME="$(basename "$0")"
 log() {
   local severity="$1"
   local message="$2"
-  local app="$3"
-  local pwd="$4"
   echo "time=$(date --iso-8601=seconds) script=${SCRIPT_NAME} severity=${severity} message=\"${message}\"" app=\"${app}\"" pwd=\"${pwd}\""
 }
 
 format_json_files() {
   # Ensure jq is installed
   if ! command -v jq &> /dev/null; then
-    log "ERROR" "jq is not installed. Please install jq to use this script."
+    log "ERROR" "app=jq status=missing. Install package=jq and add to path."
     exit 1
   fi
 
@@ -29,7 +27,7 @@ format_json_files() {
 
   # Check if there are any .json files
   if [[ ${#json_files[@]} -eq 0 ]]; then
-    log "INFO" "No JSON files found in the current directory."
+    log "INFO" "file_type=JSON files status=missing in current directory"
     exit 0
   fi
 
@@ -38,18 +36,18 @@ format_json_files() {
     log "INFO" "Processing json_file=${json_file}"
     if jq . "$json_file" > "${json_file}.tmp"; then
       mv "${json_file}.tmp" "$json_file"
-      log "INFO" "Formatted json_file=${json_file} successfully."
+      log "INFO" "Formatted json_file=${json_file} status=success"
     else
-      log "ERROR" "Failed to format json_file=${json_file}. Skipping."
+      log "ERROR" "status=failed to format json_file=${json_file}. action=skip"
       rm -f "${json_file}.tmp" # Clean up temporary file on failure
     fi
   done
 }
 
 main() {
-  log "INFO" "Starting script execution."
+  log "INFO" "action=starting script"
   format_json_files
-  log "INFO" "Script execution completed."
+  log "INFO" "action=completed script"
 }
 
 main "$@"
